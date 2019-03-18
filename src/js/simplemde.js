@@ -628,6 +628,17 @@ function drawLink(editor) {
 }
 
 /**
+ * Action for drawing a custom link.
+ */
+function drawCustomLink(editor,link) {
+	var cm = editor.codemirror;
+	var stat = getState(cm);
+	var options = editor.options;
+	var url = link;
+	_replaceSelection(cm, stat.link, options.insertTexts.link, url);
+}
+
+/**
  * Action for drawing an img.
  */
 function drawImage(editor) {
